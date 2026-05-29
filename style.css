@@ -13,10 +13,12 @@ body{
     background-color: #8A5F41;
     padding: 0;
     margin: 0;
+    height: 100vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 
     /* border: 1px solid red; */
 }
@@ -24,4 +26,17 @@ body{
 header{
     color: #CCD67F;
     font-size: 5.5vw;
+    /* border: 1px solid red; */
+}
+
+
+/* the container that contains the divs */
+#container{
+    background-color: #F3E4C9;
+    /* border: 1px solid red; */
+    aspect-ratio: 1 / 1;
+    min-width: 32vw;
+    min-height: auto;
+
+    border-radius: 1.5vw;
 }
