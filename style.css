@@ -40,3 +40,12 @@ header{
 
     border-radius: 1.5vw;
 }
+
+
+/* lower buttons */
+#buttons{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 4vw;
+}
