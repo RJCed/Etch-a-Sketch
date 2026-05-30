@@ -99,7 +99,7 @@ header{
 
 /* Vertical Grid/Row Container */
 .verticalGrid{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     min-width: 100%;
     flex-grow: 1;
     flex-shrink: 1;
@@ -109,6 +109,8 @@ header{
 
 /* each row cells inside Vertical Grid */
 .horizontalGrid{
-    border: 1px solid blue;
+    background-color: #CCD67F;
+    border: 1px solid #878e52;
+    border-radius: 0.5vw;
     flex-grow: 1;
 }
