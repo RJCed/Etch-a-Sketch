@@ -88,7 +88,7 @@ header{
     min-height: auto;
     padding: 0.7vw;
 
-    border-radius: 1.5vw;
+    border-radius: 3%;
 
     display: flex;
     flex-direction: column;
@@ -111,6 +111,6 @@ header{
 .horizontalGrid{
     background-color: #CCD67F;
     border: 1px solid #878e52;
-    border-radius: 0.5vw;
+    border-radius: 18%;
     flex-grow: 1;
 }
