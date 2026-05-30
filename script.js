@@ -28,20 +28,22 @@ const createRows = function(numRows){
 }
 
 
-
-
-
 //remove all grid divs (Temporary Function, may change to resetting colors)
 const resetGrid = function(){
     const container = document.getElementById("container");
     container.replaceChildren();
+    createGrid(10); //default
 }
 
 
 // Button for Creating Grid
 const btnGrid = document.getElementById("btn-grid");
 btnGrid.addEventListener("click", () => {
-    resetGrid();
+    
+    //This removes previous grid cells
+    const container = document.getElementById("container");
+    container.replaceChildren();
+
     const gridNumber = prompt("Grid size: (2 - 100)");
     createGrid(gridNumber);
 })
