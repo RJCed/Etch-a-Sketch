@@ -21,14 +21,7 @@ const createGrid = function(gridSize){
 }
 
 
-// Create the horizontal rows 
-const createRows = function(numRows){
-    const columnContainer = document.getElementsByClassName("verticalGrid")
-    // It might be wise to integrate this into the for loop of createColums
-}
-
-
-//remove all grid divs (Temporary Function, may change to resetting colors)
+//remove old divs and set grid to default (10 cells)
 const resetGrid = function(){
     const container = document.getElementById("container");
     container.replaceChildren();
@@ -49,7 +42,7 @@ btnGrid.addEventListener("click", () => {
 })
 
 
-// Button for removing Grid (Temporary Function, may change to resetting colors)
+// Button for resetting
 const btnReset = document.getElementById("btn-reset");
 btnReset.addEventListener("click", resetGrid);
 
