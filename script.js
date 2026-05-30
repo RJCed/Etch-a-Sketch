@@ -47,6 +47,13 @@ const btnReset = document.getElementById("btn-reset");
 btnReset.addEventListener("click", resetGrid);
 
 
+//For selecting Color
+const btnColor = document.getElementById("btn-color");
+const selectColor = document.getElementById("selectColor");
+
+btnColor.addEventListener("click", () => selectColor.click())
+
+
 
 //temporary for game start
 createGrid(10);
