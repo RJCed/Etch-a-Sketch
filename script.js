@@ -1,4 +1,3 @@
-
 // Create the vertical Columns (containers)
 const createColumns = function(numColumns){
     const container = document.getElementById("container");
@@ -11,12 +10,15 @@ const createColumns = function(numColumns){
     }
 }
 
+
 //remove all grid divs
 const resetGrid = function(){
     const container = document.getElementById("container");
     container.replaceChildren();
 }
 
+
+// Button for Creating Grid
 const btnGrid = document.getElementById("btn-grid");
 btnGrid.addEventListener("click", () => {
     resetGrid();
@@ -24,5 +26,12 @@ btnGrid.addEventListener("click", () => {
     createColumns(gridNumber);
 })
 
+
+// Button for removing Grid
 const btnReset = document.getElementById("btn-reset");
 btnReset.addEventListener("click", resetGrid);
+
+
+
+//temporary for game start
+createColumns(5);
