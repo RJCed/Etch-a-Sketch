@@ -9,9 +9,9 @@ const createGrid = function(gridSize){
 
         //This creates each box in row container
         for (x = 0; x < gridSize; x++){
-            const horizontalGrid = document.createElement("div");
-            horizontalGrid.classList.add("horizontalGrid");
-            verticalGrid.appendChild(horizontalGrid);
+            const gridCell = document.createElement("div");
+            gridCell.classList.add("gridCell");
+            verticalGrid.appendChild(gridCell);
         }
 
 

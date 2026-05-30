@@ -108,7 +108,7 @@ header{
 }
 
 /* each row cells inside Vertical Grid */
-.horizontalGrid{
+.gridCell{
     background-color: #CCD67F;
     border: 1px solid #878e52;
     border-radius: 18%;
