@@ -86,7 +86,7 @@ header{
     aspect-ratio: 1 / 1;
     min-width: 32vw;
     min-height: auto;
-    padding: 1vw;
+    padding: 0.7vw;
 
     border-radius: 1.5vw;
 
@@ -97,8 +97,8 @@ header{
 
 
 
-/* Horizontal Grid */
-.horizontalGrid{
+/* Vertical Grid */
+.verticalGrid{
     border: 1px solid red;
     min-width: 100%;
     flex-grow: 1;

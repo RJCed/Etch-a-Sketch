@@ -1,19 +1,28 @@
 
-// Create the horizontal rows (containers)
-const createRows = function(numRows){
+// Create the vertical Columns (containers)
+const createColumns = function(numColumns){
     const container = document.getElementById("container");
 
-    for (i = 0; i < numRows; i++){
-        const horizontalGrid = document.createElement("div");
+    for (i = 0; i < numColumns; i++){
+        const verticalGrid = document.createElement("div");
 
-        horizontalGrid.classList.add("horizontalGrid")
-        container.appendChild(horizontalGrid);
+        verticalGrid.classList.add("verticalGrid")
+        container.appendChild(verticalGrid);
     }
 }
 
+//remove all grid divs
+const resetGrid = function(){
+    const container = document.getElementById("container");
+    container.replaceChildren();
+}
 
 const btnGrid = document.getElementById("btn-grid");
 btnGrid.addEventListener("click", () => {
+    resetGrid();
     const gridNumber = prompt("Grid size: (2 - 100)");
-    createRows(gridNumber);
+    createColumns(gridNumber);
 })
+
+const btnReset = document.getElementById("btn-reset");
+btnReset.addEventListener("click", resetGrid);
