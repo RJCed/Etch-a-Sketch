@@ -8,7 +8,6 @@
         "MORF" 0;
 }
 
-
 body{
     background-color: #8A5F41;
     padding: 0;
@@ -30,16 +29,6 @@ header{
 }
 
 
-/* the container that contains the divs */
-#container{
-    background-color: #F3E4C9;
-    /* border: 1px solid red; */
-    aspect-ratio: 1 / 1;
-    min-width: 32vw;
-    min-height: auto;
-
-    border-radius: 1.5vw;
-}
 
 
 /* lower buttons */
@@ -49,13 +38,12 @@ header{
     gap: 4vw;
 }
 
-
 #buttons button {
-    background-color: #fbeee0;
-    border: 2px solid #422800;
+    background-color: #F3E4C9;
+    border: 2px solid #765336;
     border-radius: 30px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
+    box-shadow: #65472f 4px 4px 0 0;
+    color: #765336;
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
@@ -74,7 +62,7 @@ header{
 }
 
 #buttons button:active {
-    box-shadow: #422800 2px 2px 0 0;
+    box-shadow: #65472f 2px 2px 0 0;
     transform: translate(2px, 2px);
 }
 
@@ -83,4 +71,37 @@ header{
         min-width: 120px;
         padding: 0 25px;
     }
+}
+
+
+
+
+
+
+
+/* the container that contains the divs */
+#container{
+    background-color: #F3E4C9;
+    /* border: 1px solid red; */
+    aspect-ratio: 1 / 1;
+    min-width: 32vw;
+    min-height: auto;
+    padding: 1vw;
+
+    border-radius: 1.5vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Horizontal Grid */
+.horizontalGrid{
+    border: 1px solid red;
+    min-width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0;
 }
