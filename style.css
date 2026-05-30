@@ -97,11 +97,18 @@ header{
 
 
 
-/* Vertical Grid */
+/* Vertical Grid/Row Container */
 .verticalGrid{
     border: 1px solid red;
     min-width: 100%;
     flex-grow: 1;
     flex-shrink: 1;
     padding: 0;
+    display: flex;
+}
+
+/* each row cells inside Vertical Grid */
+.horizontalGrid{
+    border: 1px solid blue;
+    flex-grow: 1;
 }
