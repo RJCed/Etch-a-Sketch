@@ -124,8 +124,9 @@ const btnColor = document.getElementById("btn-color");
 const selectColor = document.getElementById("selectColor");
 
 btnColor.addEventListener("click", () => {
-    resetColor()
     selectColor.click()
+    resetColor()
+    myColor = myColor;
     isRandom = false;
 })
 
