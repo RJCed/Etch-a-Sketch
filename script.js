@@ -4,17 +4,9 @@ let isRandom = false;
 // FUNCTIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-const changeRandomColor = function(){
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-
-    return `rgb(${r}, ${g}, ${b})`;
-}
-
 //Changes the color of each cell
-const changeGridColor = function(cell){
-    let color = "";
+const changeColor = function(cell){
+    let color = myColor;
     if (isRandom){
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
@@ -24,7 +16,54 @@ const changeGridColor = function(cell){
     } else {
         color = myColor;
     }
+    console.log("add color")
     cell.style.backgroundColor = color;
+    cell.classList.add("isColored"); //This so that it knows when to add opacity
+}
+
+
+//Change Opacity of cell
+const changeOpacity = function(cell){
+    //Gets Computed style CSS of cell (we are looking for opacity)
+    const cellComputedStyle = window.getComputedStyle(cell)
+    currentOpacity = Number(cellComputedStyle.opacity) + 0.2; //Adjust the Number to adjust the strength of opacity change 
+    console.log("change opacity")
+
+    cell.style.opacity = currentOpacity;   
+}
+
+const changeGrid = function(cell){
+    if (cell.classList.contains("isColored")){
+        changeOpacity(cell);
+    } else {
+        changeColor(cell);
+    }
+
+
+    // let currentOpacity = 0.1;
+    
+
+    // if (cell.classList.contains('isColored')){
+    //     //Gets Computed style CSS of cell (we are looking for opacity)
+    //     const cellComputedStyle = window.getComputedStyle(cell)
+    //     currentOpacity = Number(cellComputedStyle.opacity) + 0.2; //Adjust the Number to adjust the strength of opacity change 
+    //     console.log("change opacity")
+
+    //     cell.style.opacity = currentOpacity;   
+    // } else {
+    //     let color = "";
+    //     if (isRandom){
+    //         const r = Math.floor(Math.random() * 256);
+    //         const g = Math.floor(Math.random() * 256);
+    //         const b = Math.floor(Math.random() * 256);
+
+    //         color = `rgb(${r}, ${g}, ${b})`;
+    //     } else {
+    //         color = myColor;
+    //     }
+    //     console.log("add color")
+    //     cell.style.backgroundColor = color;
+    // }
 }
 
 // Create Row-containers based on how big gridSize and each Row-containers contains cells (also based on gridSize)
@@ -47,11 +86,11 @@ const createGrid = function(gridSize){
         container.appendChild(verticalGrid);
     }
 
-    //Event listener for hover run changeGridColor function
+    //Event listener for hover run changeGrid function
     const gridCell = document.querySelectorAll(".gridCell");
 
     gridCell.forEach((gridCell) => {
-        gridCell.addEventListener("mouseenter", () => changeGridColor(gridCell));
+        gridCell.addEventListener("mouseenter", () => changeGrid(gridCell));
     })
 }
 
@@ -108,7 +147,11 @@ selectColor.addEventListener("input", (event) => {
 
 //For Random Color;
 const btnRandom = document.getElementById("btn-random");
-btnRandom.addEventListener("click", () => isRandom = true)
+btnRandom.addEventListener("click", () => {
+    console.log("Random Color")
+    isRandom = true 
+})
+
 
 //temporary for game start
 createGrid(10);
