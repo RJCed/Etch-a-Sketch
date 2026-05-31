@@ -3,7 +3,12 @@ let myColor = "#CCD67F" //Selected Color
 
 
 
-// Create the vertical Columns (containers)
+//Changes the color of each cell
+const changeGridColor = function(cell){
+    cell.style.backgroundColor = myColor
+}
+
+// Create Row-containers based on how big gridSize and each Row-containers contains cells (also based on gridSize)
 const createGrid = function(gridSize){
     const container = document.getElementById("container");
 
@@ -19,11 +24,18 @@ const createGrid = function(gridSize){
             verticalGrid.appendChild(gridCell);
         }
 
-
         verticalGrid.classList.add("verticalGrid")
         container.appendChild(verticalGrid);
     }
+
+    //Event listener for hover run changeGridColor function
+    const gridCell = document.querySelectorAll(".gridCell");
+
+    gridCell.forEach((gridCell) => {
+        gridCell.addEventListener("mouseenter", () => changeGridColor(gridCell));
+    })
 }
+
 
 
 //remove old divs and set grid to default (10 cells)
@@ -32,6 +44,7 @@ const resetGrid = function(){
     container.replaceChildren();
     createGrid(10); //default
 }
+
 
 
 // Button for Creating Grid
@@ -47,9 +60,11 @@ btnGrid.addEventListener("click", () => {
 })
 
 
+
 // Button for resetting
 const btnReset = document.getElementById("btn-reset");
 btnReset.addEventListener("click", resetGrid);
+
 
 
 //For selecting Color
@@ -61,8 +76,6 @@ btnColor.addEventListener("click", () => selectColor.click())
 selectColor.addEventListener("input", (event) => {
     myColor = event.target.value;
 })
-
-
 
 
 //temporary for game start
