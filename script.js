@@ -1,3 +1,8 @@
+let myColor = "#CCD67F" //Selected Color
+
+
+
+
 // Create the vertical Columns (containers)
 const createGrid = function(gridSize){
     const container = document.getElementById("container");
@@ -52,6 +57,11 @@ const btnColor = document.getElementById("btn-color");
 const selectColor = document.getElementById("selectColor");
 
 btnColor.addEventListener("click", () => selectColor.click())
+
+selectColor.addEventListener("input", (event) => {
+    myColor = event.target.value;
+})
+
 
 
 
