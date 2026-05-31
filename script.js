@@ -1,5 +1,6 @@
 let myColor = "#CCD67F" //Selected Color
 let isRandom = false;
+let gridNumber = 10;
 
 // FUNCTIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -27,7 +28,7 @@ const changeColor = function(cell){
 const changeOpacity = function(cell){
     //Gets Computed style CSS of cell (we are looking for opacity)
     const cellComputedStyle = window.getComputedStyle(cell)
-    currentOpacity = Number(cellComputedStyle.opacity) + 0.2; //Adjust the Number to adjust the strength of opacity change 
+    currentOpacity = Number(cellComputedStyle.opacity) + 0.3; //Adjust the Number to adjust the strength of opacity change 
     console.log("change opacity")
 
     cell.style.opacity = currentOpacity;   
@@ -78,7 +79,7 @@ const createGrid = function(gridSize){
 const resetGrid = function(){
     const container = document.getElementById("container");
     container.replaceChildren();
-    createGrid(10); //default
+    createGrid(gridNumber); 
 }
 
 // This removes isColored class so that new colors can replace old ones
@@ -106,7 +107,7 @@ btnGrid.addEventListener("click", () => {
     const container = document.getElementById("container");
     container.replaceChildren();
 
-    const gridNumber = prompt("Grid size: (2 - 100)");
+    gridNumber = prompt("Grid size: (2 - 100)");
     createGrid(gridNumber);
 })
 
