@@ -107,7 +107,7 @@ btnGrid.addEventListener("click", () => {
     const container = document.getElementById("container");
     container.replaceChildren();
 
-    gridNumber = prompt("Grid size: \n(Recommended: 1-100))");
+    gridNumber = prompt("Grid size: \n(Recommended: 1-100)");
     createGrid(gridNumber);
 })
 
