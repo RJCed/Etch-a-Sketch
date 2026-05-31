@@ -18,6 +18,7 @@ const changeColor = function(cell){
     }
     console.log("add color")
     cell.style.backgroundColor = color;
+    cell.style.opacity = 0.1; 
     cell.classList.add("isColored"); //This so that it knows when to add opacity
 }
 
@@ -32,6 +33,8 @@ const changeOpacity = function(cell){
     cell.style.opacity = currentOpacity;   
 }
 
+
+//Logic for changing color and opacity
 const changeGrid = function(cell){
     if (cell.classList.contains("isColored")){
         changeOpacity(cell);
@@ -39,31 +42,6 @@ const changeGrid = function(cell){
         changeColor(cell);
     }
 
-
-    // let currentOpacity = 0.1;
-    
-
-    // if (cell.classList.contains('isColored')){
-    //     //Gets Computed style CSS of cell (we are looking for opacity)
-    //     const cellComputedStyle = window.getComputedStyle(cell)
-    //     currentOpacity = Number(cellComputedStyle.opacity) + 0.2; //Adjust the Number to adjust the strength of opacity change 
-    //     console.log("change opacity")
-
-    //     cell.style.opacity = currentOpacity;   
-    // } else {
-    //     let color = "";
-    //     if (isRandom){
-    //         const r = Math.floor(Math.random() * 256);
-    //         const g = Math.floor(Math.random() * 256);
-    //         const b = Math.floor(Math.random() * 256);
-
-    //         color = `rgb(${r}, ${g}, ${b})`;
-    //     } else {
-    //         color = myColor;
-    //     }
-    //     console.log("add color")
-    //     cell.style.backgroundColor = color;
-    // }
 }
 
 // Create Row-containers based on how big gridSize and each Row-containers contains cells (also based on gridSize)
@@ -103,6 +81,14 @@ const resetGrid = function(){
     createGrid(10); //default
 }
 
+// This removes isColored class so that new colors can replace old ones
+const resetColor = function(){
+    const gridCell = document.querySelectorAll(".gridCell");
+
+    gridCell.forEach((gridCell) => {
+        gridCell.classList.remove("isColored");
+    })
+}
 
 // FUNCTION END ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -137,6 +123,7 @@ const btnColor = document.getElementById("btn-color");
 const selectColor = document.getElementById("selectColor");
 
 btnColor.addEventListener("click", () => {
+    resetColor()
     selectColor.click()
     isRandom = false;
 })
@@ -149,6 +136,7 @@ selectColor.addEventListener("input", (event) => {
 const btnRandom = document.getElementById("btn-random");
 btnRandom.addEventListener("click", () => {
     console.log("Random Color")
+    resetColor()
     isRandom = true 
 })
 
