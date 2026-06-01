@@ -1,8 +1,26 @@
 let myColor = "#CCD67F" //Selected Color
 let isRandom = false;
 let gridNumber = 10;
+let strength = 1;
 
 // FUNCTIONS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Opacity Srength
+const opacityStrength = function(){
+    const promptOpacity = prompt("Opacity Strength: Pick A Number \n1: Weak \n2: Moderate \n3: Strong (Default) ")
+
+    switch(promptOpacity){
+        case "1":
+            return 0.34; //It takes 3 hover interaction to fully color
+        case "2":
+            return 0.5; //It takes 2 hover interaction to fully color
+        case "3":
+            return 1; // Default, fully colored
+        default:
+            opacityStrength();
+            console.log(invalid)
+    }
+}
 
 
 //Changes the color of each cell
@@ -19,7 +37,7 @@ const changeColor = function(cell){
     }
     console.log("add color")
     cell.style.backgroundColor = color;
-    cell.style.opacity = 0.1; 
+    cell.style.opacity = strength; 
     cell.classList.add("isColored"); //This so that it knows when to add opacity
 }
 
@@ -28,7 +46,7 @@ const changeColor = function(cell){
 const changeOpacity = function(cell){
     //Gets Computed style CSS of cell (we are looking for opacity)
     const cellComputedStyle = window.getComputedStyle(cell)
-    currentOpacity = Number(cellComputedStyle.opacity) + 0.3; //Adjust the Number to adjust the strength of opacity change 
+    currentOpacity = Number(cellComputedStyle.opacity) + strength; //Adjust the Number to adjust the strength of opacity change 
     console.log("change opacity")
 
     cell.style.opacity = currentOpacity;   
@@ -142,6 +160,11 @@ btnRandom.addEventListener("click", () => {
     isRandom = true 
 })
 
+// For Strength button (Opacity) 
+const btnStrength = document.getElementById("btn-strength");
+btnStrength.addEventListener("click", () => {
+    strength = opacityStrength();
+})
 
 //temporary for game start
 createGrid(10);
