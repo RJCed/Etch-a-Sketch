@@ -23,9 +23,13 @@ body{
 }
 
 header{
+    text-align: center;
     color: #CCD67F;
-    font-size: 5.5vw;
+    font-size: clamp(45px, 5.5vw, 5.5vw);
     /* border: 1px solid red; */
+    width: 100%;
+    max-width: 37vw;
+    min-width: 300px;
 }
 
 
@@ -34,6 +38,7 @@ header{
 /* lower buttons */
 #buttons{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 4vw;
 }
@@ -93,7 +98,9 @@ header{
     background-color: #F3E4C9;
     /* border: 1px solid red; */
     aspect-ratio: 1 / 1;
-    min-width: 32vw;
+    width: 100%;
+    max-width: 30vw;
+    min-width: 325px;
     min-height: auto;
     padding: 0.7vw;
 
