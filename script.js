@@ -18,7 +18,7 @@ const opacityStrength = function(){
             return 1; // Default, fully colored
         default:
             opacityStrength();
-            console.log(invalid)
+            console.log("invalid")
     }
 }
 
