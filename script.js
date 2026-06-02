@@ -127,7 +127,7 @@ btnGrid.addEventListener("click", () => {
 
     //Checks if gridNumber is a Number
     do {
-        gridNumber = Math.round(prompt("Grid size: \n(Recommended: 1-100)"));
+        gridNumber = Math.round(prompt("Grid size: \n(Size: 1-100)"));
     } while (gridNumber <= 0 || gridNumber > 100 || Number.isNaN(gridNumber));
 
     createGrid(gridNumber);
